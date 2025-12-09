@@ -1,0 +1,16 @@
+# VAE Creation Checklist
+
+- [.] Define VAE architecture (encoder, decoder, latent space)
+- [ ] Implement encoder network
+- [ ] Implement decoder network
+- [ ] Implement reparameterization trick
+- [ ] Define loss function (reconstruction + KL divergence)
+- [ ] Set up data loading pipeline
+- [ ] Initialize optimizer
+- [ ] Write training loop
+- [ ] Implement validation logic
+- [ ] Add model checkpointing
+- [ ] Test on sample data
+- [ ] Evaluate metrics
+- [ ] Document hyperparameters
+- [ ] Generate latent space visualizations
