@@ -1,0 +1,107 @@
+Directory structure:
+└── kosmos/
+    ├── LICENSE
+    ├── configs/
+    │   └── dataset.yaml
+    ├── datasets/
+    │   └── load_dataset.py
+    └── vae/
+        ├── checklist.txt
+        └── encoder.py
+
+================================================
+FILE: LICENSE
+================================================
+MIT License
+
+Copyright (c) 2025 praymesh
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+
+================================================
+FILE: configs/dataset.yaml
+================================================
+repo_id = "AlmondGod/tinyworlds",
+dataset_list = ["picodoom_frames.h5","pole_position_frames.h5","pong_frames.h5","sonic_frames.h5","zelda_frames.h5"] 
+
+
+================================================
+FILE: datasets/load_dataset.py
+================================================
+#loading dataset from huggingface datasets
+#we will be using : https://huggingface.co/datasets/AlmondGod/tinyworlds
+import os
+from datasets import load_dataset
+from huggingface_hub import hf_hub_download
+from configs import dataset
+
+#os.makedirs("datasets/tinyworlds", exist_ok=True)
+#dataset = load_dataset("AlmondGod/tinyworlds/")
+#dataset.save_to_disk("datasets/tinyworlds")
+repo_id = dataset.repo_id #repo id in config file
+file_list = dataset.dataset_list
+for id in file_list :
+    print(f"downlading {id}")
+    hf_hub_download(
+        repo_id=repo_id,
+        repo_type="dataset", 
+        filename=id,
+        local_dir="datasets/tinyworlds",  # All files go here
+        local_dir_use_symlinks=False 
+    )
+print("dw bro , datasets got downloaded")
+
+
+
+================================================
+FILE: vae/checklist.txt
+================================================
+# VAE Creation Checklist
+
+- [.] Define VAE architecture (encoder, decoder, latent space)
+- [ ] Implement encoder network
+- [ ] Implement decoder network
+- [ ] Implement reparameterization trick
+- [ ] Define loss function (reconstruction + KL divergence)
+- [ ] Set up data loading pipeline
+- [ ] Initialize optimizer
+- [ ] Write training loop
+- [ ] Implement validation logic
+- [ ] Add model checkpointing
+- [ ] Test on sample data
+- [ ] Evaluate metrics
+- [ ] Document hyperparameters
+- [ ] Generate latent space visualizations
+
+
+================================================
+FILE: vae/encoder.py
+================================================
+#encoder of VAE 
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+import numpy as np
+from torch.nn.utils import weight_norm
+
+
+def 
+

@@ -1,0 +1,17 @@
+# .gitignore
+
+#  Python specific files
+__pycache__/
+*.pyc
+*.o
+.ipynb_checkpoints/
+
+# Model Outputs / Data Caches
+*.log
+*.ckpt
+*.pth
+datasets/tinyworlds/  
+datasets/*.h5         # Ignore the large downloaded data
+
+.DS_Store
+.vscode/

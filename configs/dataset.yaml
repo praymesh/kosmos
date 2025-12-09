@@ -1,0 +1,2 @@
+repo_id : "AlmondGod/tinyworlds"
+dataset_list : ["picodoom_frames.h5","pole_position_frames.h5","pong_frames.h5","sonic_frames.h5","zelda_frames.h5"] 
