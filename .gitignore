@@ -12,6 +12,7 @@ __pycache__/
 *.pth
 datasets/tinyworlds/  
 datasets/*.h5         # Ignore the large downloaded data
-
+digest.txt
+keys.yaml
 .DS_Store
 .vscode/
