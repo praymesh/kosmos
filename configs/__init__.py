@@ -12,7 +12,15 @@ try :
         
     repo_id = config.get("repo_id")
     dataset_list = config.get("dataset_list")
-
+    loss_weights = config.get("loss_weights")
+    batch_size = config.get("batch_size")
+    image_size = config.get("image_size")
+    learning_rate = config.get("learning_rate")
+    num_epochs = config.get("num_epochs")
+    latent_dim = config.get("latent_dim")
+    device = config.get("device")
+    
+    
 except FileNotFoundError :
     print("dataset.yaml not found.")
 except ImportError:

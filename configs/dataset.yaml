@@ -1,2 +1,17 @@
 repo_id : "AlmondGod/tinyworlds"
-dataset_list : ["picodoom_frames.h5","pole_position_frames.h5","pong_frames.h5","sonic_frames.h5","zelda_frames.h5"] 
+dataset_list : ["picodoom_frames.h5","pole_position_frames.h5","pong_frames.h5","sonic_frames.h5","zelda_frames.h5"]
+device : "cuda" 
+loss_weights :
+  recon : 1.0
+  kl : 0.1
+  lpips : 0.5
+
+batch_size : 64
+num_workers : 4
+
+input_size : 64
+image_channels : 3
+latent_dim : 128
+num_epochs : 100
+learning_rate : 0.0002
+
