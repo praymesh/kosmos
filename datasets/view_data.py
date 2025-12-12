@@ -7,7 +7,11 @@ import argparse
 from pathlib import Path
 root = Path(__file__).resolve().parent.parent  # Add parent directory to sys.path
 file_path = root / "datasets" / "tinyworlds" / "pole_position_frames.h5"
+""" """
 
+""" usage
+python -m datasets.view_data --fps 30 --scale 5.0 
+"""
 
 def view_h5_data(file_path, num_samples=5):
     with h5py.File(file_path, 'r') as h5_file:

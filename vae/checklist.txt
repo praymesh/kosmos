@@ -1,8 +1,8 @@
 # VAE Creation Checklist
 
 - [.] Define VAE architecture (encoder, decoder, latent space)
-- [ ] Implement encoder network
-- [ ] Implement decoder network
+- [.] Implement encoder network
+- [.] Implement decoder network
 - [ ] Implement reparameterization trick
 - [ ] Define loss function (reconstruction + KL divergence)
 - [ ] Set up data loading pipeline
